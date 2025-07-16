@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 public class HomeServiceImp  implements HomeService{
 	private final HomeDao homeDao;
 
-	@Override
+	@Override // 전체 리스트
 	public String findlist(Model model, HttpServletRequest req) {
 		String accept = req.getParameter("accept");
 		System.out.println(accept == null);
@@ -37,7 +37,7 @@ public class HomeServiceImp  implements HomeService{
 		
 	}
 
-	@Override
+	@Override //한개 정보 가져오기
 	public String findeone(Model model, HttpServletRequest req) {
 		//그대로 가져다가 씀
 		try {
@@ -57,6 +57,16 @@ public class HomeServiceImp  implements HomeService{
 		//homeDTO = homeDao.findone(homeDTO);
 		//model.addAttribute(homeDTO);
 		
+	}
+
+	@Override // 글 수정
+	public String edit(HttpServletRequest req) {
+		int no = Integer.parseInt(req.getParameter("no"));
+		String title = req.getParameter("title");
+		String content = req.getParameter("content");
+		HomeDTO homeDTO = HomeDTO.builder().no(no).title(title).content(content).build();
+		homeDao.edit(homeDTO);
+		return "redirect:/";
 	}
 
 }

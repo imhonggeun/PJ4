@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.java.DTO.HomeDTO;
 
@@ -19,7 +20,10 @@ public interface HomeMapper {
 	List<HomeDTO> findlist(String accept); //전체화면
 
 	@Select("select * from test where no = #{no}")
-	HomeDTO findone(int no); //글 하나 
+	HomeDTO findone(int no); //한개 정보 가져오기
+
+	@Update("update test set title=#{title},content=#{content} where no=#{no} ")
+	public int edit(HomeDTO homeDTO); //글 수정
 
 	
 

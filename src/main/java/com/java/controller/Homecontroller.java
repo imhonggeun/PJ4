@@ -3,6 +3,7 @@ package com.java.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.java.service.HomeService;
 
@@ -22,6 +23,10 @@ public class Homecontroller {
 	@GetMapping("/detail") // 한개 정보 가져오기
 	public String findone(Model model,HttpServletRequest req) {
 		return homeService.findeone(model,req);
+	}
+	@PostMapping("edit") // 글 수정
+	public String edit(HttpServletRequest req) {
+		return homeService.edit(req);
 	}
 
 }

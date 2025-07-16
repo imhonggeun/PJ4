@@ -10,4 +10,6 @@ public interface HomeService {
 
 	public String findeone(Model model, HttpServletRequest req); //한개 정보 가져오기
 
+	public String edit(HttpServletRequest req); // 글 수정
+
 }

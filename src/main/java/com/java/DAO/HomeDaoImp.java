@@ -15,14 +15,19 @@ import lombok.RequiredArgsConstructor;
 public class HomeDaoImp implements HomeDao{
 	private final HomeMapper homeMapper;
 
-	@Override
+	@Override //전체 리스트
 	public List<HomeDTO> findlist(String accept) {
 		return homeMapper.findlist(accept);
 	}
 
-	@Override
+	@Override // 한개 정보 가져오기
 	public HomeDTO findOne(int no) {
 		return homeMapper.findone(no);
+	}
+
+	@Override // 글 수정
+	public int edit(HomeDTO homeDTO) {
+		return homeMapper.edit(homeDTO);
 	}
 
 }
