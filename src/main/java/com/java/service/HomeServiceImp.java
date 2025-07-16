@@ -69,12 +69,22 @@ public class HomeServiceImp  implements HomeService{
 		return "redirect:/";
 	}
 
-	@Override
+	@Override // 글 추가
 	public String input(HttpServletRequest req) {
 		String title = req.getParameter("title");
 		String content = req.getParameter("content");
 		HomeDTO homeDTO = HomeDTO.builder().title(title).content(content).build();
 		homeDao.input(homeDTO);
+		return "redirect:/";
+	}
+
+	@Override
+	public String accept(HttpServletRequest req) {
+		int no = Integer.parseInt(req.getParameter("no"));
+		boolean accept = (req.getParameter("accept").equals("0")) ? true : false;
+		HomeDTO homeDTO = HomeDTO.builder().no(no).accept(accept).build();
+		homeDao.accept(homeDTO);
+			
 		return "redirect:/";
 	}
 

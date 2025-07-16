@@ -14,6 +14,8 @@ public interface HomeDao {
 	public int edit(HomeDTO homeDTO); //글 수정
 
 	public int input(HomeDTO homeDTO); //글 추가
+
+	public int accept(HomeDTO homeDTO); // 승인,미승인
 	
 	
 

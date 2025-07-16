@@ -33,9 +33,14 @@ public class Homecontroller {
 	public String input() {
 		return "/input";
 	}	
+	
 	@PostMapping("/input") //글 추가
 	public String input(HttpServletRequest req) {
 		return homeService.input(req);
+	}
+	@GetMapping("/accept") // 승인,미승인
+	public String accept(HttpServletRequest req) {
+		return homeService.accept(req);
 	}
 	
 }

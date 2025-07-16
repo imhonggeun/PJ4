@@ -29,6 +29,9 @@ public interface HomeMapper {
 	@Insert("INSERT INTO test (title,content) VALUES (#{title},#{content})")
 	int input(HomeDTO homeDTO); //글 추가
 
+	@Update("update test set accept=#{accept} where no=#{no}")
+	int accept(HomeDTO homeDTO);// 승인,미승인
+
 	
 
 }

@@ -35,4 +35,9 @@ public class HomeDaoImp implements HomeDao{
 		return homeMapper.input(homeDTO);
 	}
 
+	@Override
+	public int accept(HomeDTO homeDTO) {
+		return homeMapper.accept(homeDTO);
+	}
+
 }

@@ -14,4 +14,6 @@ public interface HomeService {
 
 	public String input(HttpServletRequest req); // 글 추가
 
+	public String accept(HttpServletRequest req); //승인,미승인
+
 }
