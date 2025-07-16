@@ -18,6 +18,9 @@ public interface HomeMapper {
 			+ "</script>"})
 	List<HomeDTO> findlist(String accept); //전체화면
 
+	@Select("select * from test where no = #{no}")
+	HomeDTO findone(int no); //글 하나 
+
 	
 
 }

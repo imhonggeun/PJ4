@@ -37,4 +37,26 @@ public class HomeServiceImp  implements HomeService{
 		
 	}
 
+	@Override
+	public String findeone(Model model, HttpServletRequest req) {
+		//그대로 가져다가 씀
+		try {
+			int no = Integer.parseInt(req.getParameter("no"));// getInteger(x) -> parserInt
+			HomeDTO homeDTO =homeDao.findOne(no);
+			model.addAttribute("result",homeDTO);
+			return "detail";
+		}catch (NumberFormatException e) {
+			e.printStackTrace();
+			return "redirect:/";
+		}
+		
+		//int no = Integer.getInteger(req.getParameter("no"));
+		//String title = req.getParameter("title");
+		//String content = req.getParameter("content");
+		//List<HomeDTO> homeDTO = HomeDTO.builder().no(no).title(title).content(content).build();
+		//homeDTO = homeDao.findone(homeDTO);
+		//model.addAttribute(homeDTO);
+		
+	}
+
 }

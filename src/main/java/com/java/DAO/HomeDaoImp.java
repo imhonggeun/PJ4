@@ -20,4 +20,9 @@ public class HomeDaoImp implements HomeDao{
 		return homeMapper.findlist(accept);
 	}
 
+	@Override
+	public HomeDTO findOne(int no) {
+		return homeMapper.findone(no);
+	}
+
 }

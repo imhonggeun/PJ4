@@ -19,5 +19,9 @@ public class Homecontroller {
 		return homeService.findlist(model,req);
 	}
 	
+	@GetMapping("/detail") // 한개 정보 가져오기
+	public String findone(Model model,HttpServletRequest req) {
+		return homeService.findeone(model,req);
+	}
 
 }
