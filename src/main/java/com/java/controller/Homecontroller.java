@@ -28,5 +28,14 @@ public class Homecontroller {
 	public String edit(HttpServletRequest req) {
 		return homeService.edit(req);
 	}
-
+	
+	@GetMapping("/input") // 글 추가 화면이동
+	public String input() {
+		return "/input";
+	}	
+	@PostMapping("/input") //글 추가
+	public String input(HttpServletRequest req) {
+		return homeService.input(req);
+	}
+	
 }

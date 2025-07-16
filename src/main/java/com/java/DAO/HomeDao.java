@@ -11,7 +11,9 @@ public interface HomeDao {
 
 	public HomeDTO findOne(int no); //한개 정보 가져오기
 
-	public int edit(HomeDTO homeDTO);
+	public int edit(HomeDTO homeDTO); //글 수정
+
+	public int input(HomeDTO homeDTO); //글 추가
 	
 	
 

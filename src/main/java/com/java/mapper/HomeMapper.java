@@ -2,6 +2,7 @@ package com.java.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -24,6 +25,9 @@ public interface HomeMapper {
 
 	@Update("update test set title=#{title},content=#{content} where no=#{no} ")
 	public int edit(HomeDTO homeDTO); //글 수정
+
+	@Insert("INSERT INTO test (title,content) VALUES (#{title},#{content})")
+	int input(HomeDTO homeDTO); //글 추가
 
 	
 

@@ -30,4 +30,9 @@ public class HomeDaoImp implements HomeDao{
 		return homeMapper.edit(homeDTO);
 	}
 
+	@Override // 글 추가
+	public int input(HomeDTO homeDTO) {
+		return homeMapper.input(homeDTO);
+	}
+
 }

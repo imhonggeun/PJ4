@@ -12,4 +12,6 @@ public interface HomeService {
 
 	public String edit(HttpServletRequest req); // 글 수정
 
+	public String input(HttpServletRequest req); // 글 추가
+
 }

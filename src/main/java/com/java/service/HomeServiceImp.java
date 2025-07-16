@@ -69,4 +69,13 @@ public class HomeServiceImp  implements HomeService{
 		return "redirect:/";
 	}
 
+	@Override
+	public String input(HttpServletRequest req) {
+		String title = req.getParameter("title");
+		String content = req.getParameter("content");
+		HomeDTO homeDTO = HomeDTO.builder().title(title).content(content).build();
+		homeDao.input(homeDTO);
+		return "redirect:/";
+	}
+
 }
